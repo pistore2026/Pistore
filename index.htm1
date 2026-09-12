@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PI | فروشگاه</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+header{
+  background:#6b3fa0;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+}
+main{
+  padding:20px;
+  max-width:700px;
+  margin:auto;
+}
+.card{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:15px;
+  box-shadow:0 3px 10px rgba(0,0,0,.1);
+  text-align:center;
+}
+.price{
+  font-size:22px;
+  font-weight:bold;
+  color:#6b3fa0;
+}
+button{
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:10px;
+  background:#6b3fa0;
+  color:white;
+  font-size:17px;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>فروشگاه PI</h1>
+<p>خرید و فروش با Pi</p>
+</header>
+
+<main>
+
+<div class="card">
+<h2>محصول شماره ۱</h2>
+<p>محصول دیجیتال فروشگاه PI</p>
+<div class="price">10 PI</div>
+<button onclick="buy()">خرید با PI</button>
+</div>
+
+<div class="card">
+<h2>محصول شماره ۲</h2>
+<p>محصول دیجیتال ویژه</p>
+<div class="price">25 PI</div>
+<button onclick="buy()">خرید با PI</button>
+</div>
+
+</main>
+
+<script>
+function buy(){
+  alert("بخش پرداخت Pi را در مرحله بعد به اپ اضافه می‌کنیم.");
+}
+</script>
+
+</body>
+</html>
