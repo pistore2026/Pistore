@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#6b46c1">
+<title>PI | فروشگاه</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f6f4fb;color:#222}
+header{background:linear-gradient(135deg,#5b2ca0,#8b5cf6);color:white;padding:22px 18px 28px;border-radius:0 0 24px 24px}
+.top{display:flex;justify-content:space-between;align-items:center}.logo{font-size:28px;font-weight:bold}.cart{background:#fff2;padding:9px 12px;border-radius:12px}
+h1{font-size:22px;margin:22px 0 6px}.sub{opacity:.9;font-size:13px}
+main{padding:18px}.search{width:100%;padding:14px;border:0;border-radius:14px;box-shadow:0 2px 10px #00000012;font-size:14px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:white;border-radius:18px;padding:15px;box-shadow:0 3px 12px #0000000d}
+.icon{font-size:32px}.name{font-weight:bold;margin:8px 0}.price{color:#5b2ca0;font-weight:bold;margin-bottom:12px}
+button{width:100%;border:0;border-radius:12px;padding:11px;background:#6b46c1;color:white;font-weight:bold}
+nav{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #eee;display:flex;justify-content:space-around;padding:10px 5px}
+nav span{font-size:12px;text-align:center;color:#555}.wrap{padding-bottom:75px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="top"><div class="logo">π PI</div><div class="cart">🛒 <span id="count">0</span></div></div>
+<h1>فروشگاه PI</h1><div class="sub">نسخه آزمایشی فروشگاه فارسی</div></header>
+<main>
+<input id="search" class="search" placeholder="جست‌وجوی ارز یا محصول..." oninput="filterProducts()">
+<h2>محصولات</h2><div id="grid" class="grid"></div>
+</main></div>
+<nav><span>🏠<br>خانه</span><span>💰<br>ارزها</span><span>🛒<br>سبد خرید</span><span>👤<br>حساب من</span></nav>
+<script>
+const products=[
+ {name:"Pi",price:"1.00 Pi",icon:"π"},
+ {name:"Bitcoin",price:"قیمت نمایشی",icon:"₿"},
+ {name:"Ethereum",price:"قیمت نمایشی",icon:"Ξ"},
+ {name:"USDT",price:"قیمت نمایشی",icon:"₮"}
+];
+let count=0;
+function render(list=products){grid.innerHTML=list.map((p,i)=>`<div class="card"><div class="icon">${p.icon}</div><div class="name">${p.name}</div><div class="price">${p.price}</div><button onclick="add()">افزودن به سبد</button></div>`).join("")}
+function add(){count++;document.getElementById("count").textContent=count;alert("به سبد خرید اضافه شد.");}
+function filterProducts(){const q=search.value.trim().toLowerCase();render(products.filter(p=>p.name.toLowerCase().includes(q)))}
+render();
+</script>
+</body>
+</html>
